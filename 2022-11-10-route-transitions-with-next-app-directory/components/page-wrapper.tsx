@@ -1,4 +1,7 @@
+"use client";
+
 import classNames from "classnames";
+import { motion } from "framer-motion";
 
 export const PageWrapper = ({
   children,
@@ -7,7 +10,12 @@ export const PageWrapper = ({
   children: React.ReactNode;
   className?: string;
 }) => (
-  <div className={classNames("min-h-screenHeightWithoutHeader", className)}>
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: 20 }}
+    className={classNames("min-h-screenHeightWithoutHeader", className)}
+  >
     {children}
-  </div>
+  </motion.div>
 );
