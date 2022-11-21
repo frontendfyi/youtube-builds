@@ -1,5 +1,5 @@
 import { Button } from "./button";
-import { Button as CVAButton } from "./button";
+import { Button as CVAButton } from "./button-cva";
 
 const PreviewPane = ({
   children,

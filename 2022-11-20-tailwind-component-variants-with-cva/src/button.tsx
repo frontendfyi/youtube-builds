@@ -3,10 +3,10 @@ import { ButtonHTMLAttributes } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  size?: "slim" | "medium" | "large";
   variant?: "default" | "primary" | "destructive" | "monochrome";
-  fullWidth?: boolean;
   modifier?: "plain" | "outline";
+  size?: "slim" | "medium" | "large";
+  fullWidth?: boolean;
   loading?: boolean;
 }
 
@@ -66,9 +66,12 @@ export const Button = ({
         modifier === "plain" && variant === "primary" && "text-primary",
 
         // Sizes overrides
-        size === "slim" && "text-sm px-3 py-[3px]",
-        size === "medium" && "text-sm px-4 py-2",
-        size === "large" && "text-base px-6 py-3",
+        size === "slim" && "text-sm",
+        size === "medium" && "text-sm",
+        size === "large" && "text-base",
+        modifier !== "plain" && size === "slim" && "px-3 py-[3px]",
+        modifier !== "plain" && size === "medium" && "px-4 py-2",
+        modifier !== "plain" && size === "large" && "px-6 py-3",
         fullWidth && "w-full",
 
         // Disabled
