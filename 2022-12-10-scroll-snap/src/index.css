@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --container-size: 1200px;
+  }
+}
+
+@layer utilities {
+  .slide-center {
+    transform: translateX(calc(max(var(--container-size), 100vw) / 2 - calc(var(--container-size) / 2)))
+  }
+}
