@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic viewport height</title>
+
+    <style>
+      /**
+      * Note that this file doesn't use any CSS preprocessor or any
+      * other form of structuring plain CSS files like eg BEM.
+      * The main intention of this file is to have some basic styles,
+      * and teach the differences between vh, dhv and cvh.
+      */
+      :root {
+        font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+        font-size: 62.5%;
+        color: rgba(255, 255, 255, 0.87);
+
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-text-size-adjust: 100%;
+
+        --color-gray: #393c41;
+        --color-black: #171a20;
+        --color-white: #fff;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+      }
+
+      main {
+        display: flex;
+        width: 100%;
+      }
+
+      main > section {
+        width: 25%;
+        font-size: 3rem;
+        color: var(--color-black);
+        padding-top: 3rem;
+      }
+
+      section span {
+        position: sticky;
+        top: 0;
+      }
+
+      .vh {
+        height: 100vh;
+        background-color: rgb(223, 210, 210);
+      }
+
+      .small {
+        height: 100svh;
+        background-color: rgb(192, 173, 173);
+      }
+
+      .large {
+        height: 100lvh;
+        background-color: rgb(149, 131, 131);
+      }
+
+      .dynamic {
+        height: 100dvh;
+        background-color: rgb(124, 107, 107);
+      }
+
+      .space {
+        height: 40rem;
+        width: 100%;
+        background-color: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="vh"><span>100vh</span></section>
+      <section class="small"><span>svh</span></section>
+      <section class="large"><span>lvh</span></section>
+      <section class="dynamic"><span>dhv</span></section>
+    </main>
+    <div class="space"></div>
+  </body>
+</html>
